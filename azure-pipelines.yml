@@ -15,6 +15,12 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: CopyFiles@2
+  displayName: 'Copy Files'
+  inputs:
+    SourceFolder: 'PartsUnlimited-aspnet45'
+    TargetFolder: '$(build.artifactstagingdirectory)/Templates'
+
 - task: NuGetToolInstaller@0
 
 - task: NuGetCommand@2
